@@ -40,7 +40,8 @@ def export():
       raise Exception
     word = word.lower()
     jobs = db.get(word)
-    if not jobs:
+    # 리스트가 빈 경우에는 빈 파일을 만들어주어야 함
+    if jobs is None:
       raise Exception
     save_to_file(jobs)
     return send_file("jobs.csv")
