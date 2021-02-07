@@ -41,9 +41,6 @@ def extract_jobs(last_page, url):
         # 결과가 적은 경우에 나오는 'You might be interested in these jobs:'부터는 제외
         if result.find("div", {"class": "ml24"}) is not None:
           break
-        # 그 외에는 스킵
-        else:
-          continue
   return jobs
 
 def get_so_jobs(word):
